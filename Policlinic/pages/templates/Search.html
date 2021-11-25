@@ -1,0 +1,295 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang = ru>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="{% static 'pages/ava.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/Search.css' %}">
+    <title> {{ title }} </title>
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&display=swap');
+        #fon{
+        width: 100%;
+        }
+        .c {
+        text-align: center;
+        }
+     table {
+        width: 80%;
+        align-content: center;
+        margin: auto;
+        border-collapse: collapse;
+        border: none;
+        font-size: 13pt;
+     }
+     th,td,tr {
+        border: none;
+        text-align: center
+     }
+          h1{
+        text-align: center;
+        }
+        header {
+        padding-top: 50px;
+        text-align: center;
+    }
+     #navbar a {
+         font-family: "Montserrat", sans-serif;
+         font-weight: 500;
+         font-size: 14px;
+         color: seashell;
+         text-decoration: none;
+    }
+        #navbar ul{
+        display: none;
+        background-color: #23252a;
+        position: absolute;
+        top: 100%;
+    }
+    #navbar li:hover ul { display: block; }
+
+    #navbar, #navbar ul{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    #navbar {
+         width: 95%;
+        height: 50px;
+        background-color: #23252a;
+        left: 70px;
+        position: fixed;
+    }
+    #navbar li {
+        float: left;
+        position: relative;
+        height: 100%;
+        width: 25%;
+        text-align: center;
+    }
+     #navbar li a {
+        display: block;
+        padding: 6px;
+        width: 150px;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+    }
+     #navbar .list {
+           display: inline-block;
+           width: 100%;
+     }
+     #navbar ul li { float: none; }
+  #navbar li:hover { background-color: #666; }
+     #navbar ul li:hover { background-color: #666;
+     width: 100%}
+      #navbar li[id="current"]{
+            pointer-events: none;
+            cursor: default;
+      }
+      #navbar li[id="current"] a{
+      color: #888;}
+      #logo {
+        position: fixed;
+        z-index: 10;
+        width: 70px;
+        height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'pages:main' %}" target="_blank"> <img id="logo" src="{% static 'pages/logo.png' %}"  title="Возврат на главную страницу"> </a>
+     <ul id="navbar">
+            <li ><a class="list" href="{% url 'pages:main' %}">На главную</a></li>
+            <li><a class="list" href="{% url 'pages:shedule' %}">Приемные дни медперсонала</a></li>
+            <li><a class="list" href="{% url 'pages:info' %}">Пациентам</a></li>
+            <li ><a class="list" href="{% url 'pages:appointment' %}">Запись на прием</a></li>
+     </ul>
+     <header>
+        <h1> {{ title }} </h1>
+        <img id="fon" src="{% static 'pages/image.png' %}" alt="">
+        <p class="c"> Поиск оформленных записей на прием </p> </br>
+     </header>
+
+<!--<table>
+    <tr>
+        <th> ФИО </th>
+        <th> Кабинет </th>
+         <th> ПН </th>
+         <th> ВТ </th>
+         <th> СР </th>
+         <th> ЧТ </th>
+         <th> ПТ </th>
+         <th> СБ </th>
+    </tr>
+    <tr>
+        <th> Бандур Ирина Вячеславовна </th>
+        <th> 58 </th>
+         <td> 11:00-18:00 </td>
+         <td> 10:00-13:00 </td>
+         <td> 11:00-18:00 </td>
+         <td> 13:00-18:00 </td>
+         <td> - </td>
+         <td> - </td>
+    </tr>
+   <tr>
+        <th> Добровольская Лариса Анатольевна </th>
+        <th> 39 </th>
+         <td> 12:30-14:00 </td>
+         <td> 14:00-16:00 </td>
+         <td> 8:00-11:00 </td>
+         <td> 13:00-15:00 </td>
+         <td> - </td>
+         <td> 12:00-14:00 </td>
+    </tr>
+       <tr>
+        <th> Добровольская Лариса Анатольевна </th>
+        <th> 27 </th>
+         <td> 14:00-18:00 </td>
+         <td> 10:00-14:00 </td>
+         <td> 11:00-15:00 </td>
+         <td> 8:00-13:00 </td>
+         <td> - </td>
+         <td> 14:00-16:00 </td>
+    </tr>
+       <tr>
+        <th> Жигалева Елена Анатольевна </th>
+        <th> 43 </th>
+         <td> 8:00-14:00 </td>
+         <td> 10:00-16:00 </td>
+         <td> 12:00-18:00 </td>
+         <td> 12:00-18:00 </td>
+         <td> 8:00-14:00 </td>
+         <td> - </td>
+    </tr>
+       <tr>
+        <th> Кокоша Виктория Александровна </th>
+        <th> 41 </th>
+         <td> 9:00-16:00 </td>
+         <td> 8:00-11:00 </td>
+         <td> 8:00-14:00 </td>
+         <td> 8:00-14:00 </td>
+         <td> - </td>
+         <td> - </td>
+    </tr>
+    <tr>
+        <th> Заночкина Виктория Александровна </th>
+        <th> 56 </th>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> - </td>
+    </tr>
+    <tr>
+        <th> Лазарева Людмила Ивановна </th>
+        <th> 42 </th>
+        <td> 12:00-18:00 </td>
+        <td> 8:00-14:00 </td>
+        <td> 8:00-14:00 </td>
+        <td> 8:00-14:00 </td>
+        <td> 8:00-14:00 </td>
+        <td> - </td>
+    </tr>
+    <tr>
+        <th> Ларичев Валерий Борисович </th>
+        <th> 80 </th>
+        <td> - </td>
+        <td> 16:00-18:00 </td>
+        <td> 16:00-18:00 </td>
+        <td> - </td>
+        <td> 16:00-18:00 </td>
+        <td> 8:00-14:00 </td>
+    </tr>
+    <tr>
+        <th> Сошко Ольга Васильевна </th>
+        <th> 80 </th>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> - </td>
+    </tr>
+    <tr>
+        <th> Манукян Лиана Самвеливна </th>
+        <th> 29 </th>
+        <td> 11:00-17:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> - </td>
+    </tr>
+    <tr>
+        <th> Чуб Елена Вениаминовна </th>
+        <th> 80 </th>
+        <td> 11:00-15:00 </td>
+        <td> 12:00-16:00 </td>
+        <td> 11:00-15:00 </td>
+        <td> 13:00-17:00 </td>
+        <td> - </td>
+        <td> - </td>
+    </tr>
+</table>
+<br><br>-->
+    <div class="container">
+        <form class="form" id = "form" method="POST">
+            {% csrf_token %}
+            <div class="form-control">
+                <label>Email<label class="red">*</label></label>
+                {{ search_form.email }}
+            </div>
+
+            <div class="form-control">
+                <label>Номер телефона<label class="red">*</label></label>
+                {{ search_form.telephone }}
+                <!--<input required type="text" placeholder="Впишите фамилию" id = "last_name" name="surname"/>-->
+            </div>
+
+            <div class="form-control">
+                <span>{{ error }}</span>
+            </div>
+
+            <button type="submit" class = "submitbutton" id = "submitbutton"> Найти запись </button>
+        </form>
+        <p class="c"> {{ confirmation_message }}</p> </br>
+    </div>
+
+
+</body>
+
+
+{% if appointments %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Фамилия, имя клиента</th>
+                <th>Дата приема</th>
+                <th>Время приема</th>
+                <th>Фамилия, имя доктора</th>
+                <th>Статус записи</th>
+            </tr>
+        </thead>
+        {% for appointment in appointments%}
+        <tbody>
+            <tr>
+                <th>{{ appointment.0}} {{ appointment.1 }}</th>
+                <th>{{ appointment.2 }}</th>
+                <th>{{ appointment.3 }}</th>
+                <th>{{ appointment.4 }} {{ appointment.5 }}</th>
+                <th>{{ appointment.6 }}</th>
+                <th>
+                    <div class="buttons">
+                        <button onclick=" window.location = '{% url 'pages:update' app_id=appointment.7 %}' "> Обновить информацию </button>
+                        <button onclick=" window.location = '{% url 'pages:refuse' app_id=appointment.7 %}' "> Отказаться </button>
+                    </div>
+                </th>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+{% endif %}
+
+</html>

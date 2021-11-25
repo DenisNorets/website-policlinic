@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" href="{% static 'pages/ava.png' %}">
+    <meta charset="UTF-8">
+    <title> {{ title }} </title>
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&display=swap');
+    table {
+        align-content: center;
+        border-collapse: separate;
+        border-spacing: 5cm 0cm;
+        font-size: 110%;
+    }
+     #navbar a {
+         font-family: "Montserrat", sans-serif;
+         font-weight: 500;
+         font-size: 14px;
+         color: seashell;
+         text-decoration: none;
+    }
+    header {
+        padding-top: 50px;
+        text-align: center;
+    }
+        #navbar ul{
+        display: none;
+        background-color: #23252a;
+        position: absolute;
+        top: 100%;
+    }
+    #navbar li:hover ul { display: block; }
+
+    #navbar, #navbar ul{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    #navbar {
+        width: 95%;
+        height: 50px;
+        background-color: #23252a;
+        left: 70px;
+        position: fixed;
+    }
+    #navbar li {
+        float: left;
+        position: relative;
+        height: 100%;
+        width: 25%;
+        text-align: center;
+    }
+     #navbar li a {
+        display: block;
+        padding: 6px;
+        width: 150px;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+    }
+     #navbar .list {
+           display: inline-block;
+           width: 100%;
+     }
+     #navbar ul li { float: none; }
+     #navbar li:hover { background-color: #666; }
+     #navbar ul li:hover { background-color: #666;
+     width: 100%}
+      #navbar [class="current"]{
+            pointer-events: none;
+            cursor: default;
+      }
+      #navbar [class="current"] a{
+          color: #888;
+       }
+      #logo {
+        position: fixed;
+        z-index: 10;
+        width: 70px;
+        height: 70px;
+        }
+        #fon{
+        width: 100%;
+        }
+        h2{
+        text-align: center;
+        }
+        #flex-container {
+        display: flex;
+        width: 100%;
+        text-align: center;
+       }
+    #cont1 {
+            flex-basis: auto;
+            flex-grow: 1;
+            flex-shrink: 1;
+     }
+    #cont2 {
+            flex-basis: auto;
+            flex-grow: 2;
+            flex-shrink: 2;
+    }
+</style>
+</head>
+<body>
+<a href="../main" target="_blank"> <img id="logo" src="{% static 'pages/logo.png' %}"  title="Возврат на главную страницу"> </a>
+ <ul id="navbar">
+        <li><a class="list" href="../shedule" target="_blank">Информация о медперсонале </a></li>
+        <li><a class="list" href="../info" target="_blank">Пациентам</a></li>
+        <li id="current"><a class="list"> Контакты </a>
+            <ul >
+                <li class="current"><a href="../contacts#adr" target="_blank" >Адрес</a></li>
+                <li class="current"><a href="../contacts#flex-container" target="_blank" >Телефон</a></li>
+                <li class="current"><a href="../contacts#mail" target="_blank">Email</a></li>
+            </ul>
+        </li>
+        <li ><a class="list" href="../appointment" target="_blank">Запись на прием</a></li>
+ </ul>
+<header>
+ <h1 >Контакты </h1>
+</header>
+
+<img  id="fon" src="{% static 'pages/image.png' %}"  alt="">
+<h2> Адреса поликлиники </h2>
+<p id="adr"> Адрес поликлиники: пр. Победы, 85, г. Харьков <br> </p>
+<p id="mail">  E-mail: denys.norets@nure.ua </p>
+<h2 > Телефоны </h2>
+<div id="flex-container">
+    <div id="cont1">
+    <p>+380 (57) 725-52-63 - Главный врач <br>
+        +380 (57) 725-52-64 - Заместитель главного врача по
+        медицинской части <br>
+        +380 (57) 725-52-65 - Заместитель главного врача по
+        экономическим вопросам <br>
+        +380 (57) 725-52-64 - Главная медсестра <br>
+        +380 (57)725-52-68 - Кабинет инфекционных заболеваний <br>
+    </p>
+    </div>
+    <div id="cont2">
+        <p>+380 (57)725-52-65 - Главный бухгалтер <br>
+    +380 (57) 725-52-70 - Информатор <br>
+    +380 (57) 725-52-71 - Регистратура <br>
+    097-549-12-51 (Київстар) - Реєстратура <br>
+    099-525-40-81 (Vodafone UA) - Реєстратура
+        </p>
+    </div>
+</div>
+</body>
+</html>

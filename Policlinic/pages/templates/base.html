@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title> {% block title %} {{ title_msg }} {% endblock %} </title>
+    {% block links %}
+        <link rel="icon" href="{% static 'pages/ava.png' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'pages/policlinic.css' %}">
+    {% endblock %}
+</head>
+
+<body>
+    {% block body %}
+    <img id="logo" src="{% static 'pages/logo.png' %}"  title="Логотип">
+        <ul id="navbar">
+            <li><a class="list" href="" target="_blank">Example</a></li>
+            <li><a class="list" href="" target="_blank">Example</a></li>
+            <li><a class="list" href="" target="_blank">Example</a></li>
+            <li><a class="list" href="" target="_blank">Example</a></li>
+        </ul>
+
+        <header>
+            {% if name %}
+            <h1> Добро пожаловать, {{name}} </h1>
+            {% endif %}
+            <h1>  Поликлиника Шевченковского района </h1> <br>
+        </header>
+        <div class="popup">
+            <h3> {{ confirmation_message }} </h3>
+        </div>
+        <img id="fon" src="{% static 'pages/image.png' %}" alt="">
+        <br/>
+        <img id="photo" src ="{% static 'pages/image1.jpg' %}" title="Поликлиника" alt="Фото поликлиники">
+        <br>
+        <font size = "4">
+        <p>
+            Example
+            <br>
+            Example
+        </p>
+        <ul>
+            <li> Example; </li><br>
+            <li> Example; </li> <br>
+            <li> Example; </li> <br>
+            <li> Example; </li> <br>
+        </ul>
+
+        <p> Если у вас есть предложения или замечания, оставьте свой отзыв! </p>
+        </font>
+        <textarea name="comment" cols="70" rows="4"> </textarea>
+
+        <p><input type="submit" value="Отправить">
+        <input type="reset" value="Очистить">
+        </p>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="{% static 'pages/policlinic.js' %}"></script>
+    {% endblock %}
+</body>
+
+<footer>
+    {% block footer %}
+    <h5> Харьков, пр. Победы 84 </h5>
+    <h5> <i> +38-096-026-24-08 danil.norets@gmail.com</i> </h5>
+    <h5> {% now "jS F Y H:i" %} </h5>
+    {% endblock %}
+</footer>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/test.css' %}">
+    <link rel="icon" href="{% static 'pages/ava.png' %}">
+<meta charset="utf-8">
+<title>{{ title }}</title>
+</head>
+
+<body>
+    <div class="quiz" id = "quiz">
+        <div class="quiz-questions" id="questions"> </div>
+
+
+        <div class="quiz-results" id="results">
+            <div class = "1div"><label class = "done-check" id = "done-check"></label></div>
+            <div class = "2div"><label class = "test-result" id = "test-result"></label></div>
+        </div>
+        
+
+        <div class="quiz-controls">
+            <button class="btn-next" id="btn-next" disabled>Далее</button>
+            <button class="btn-restart" id="btn-restart">Пройти тест еще раз</button>
+            <button class="btn-return" id="btn-return" onclick="redirect();">Вернуться на главную</button>
+        </div>
+
+    </div>
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="{% static 'pages/test.js' %}"></script>
+</html>

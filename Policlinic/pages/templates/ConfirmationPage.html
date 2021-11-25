@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title> {% block title %} {{ title }} {% endblock %} </title>
+    {% block links %}
+        <link rel="icon" href="{% static 'pages/ava.png' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'pages/policlinic.css' %}">
+    {% endblock %}
+</head>
+
+<body>
+    {% block body %}
+    <img id="logo" src="{% static 'pages/logo.png' %}"  title="Логотип">
+        <ul id="navbar">
+            <li><a class="list" href="{% url 'pages:shedule' %}" >Приемные дни медперсонала</a></li>
+            <li><a class="list" href="{% url 'pages:info' %}">Пациентам</a></li>
+            <li ><a class="list" href="{% url 'pages:appointment' %}" target="_blank">Запись на прием</a></li>
+            <li ><a class="list" href="{% url 'pages:search' %}" target="_blank">Поиск записей</a></li>
+        </ul>
+
+
+    {% endblock %}
+</body>
+
+<footer>
+    {% block footer %}
+    <h5> Харьков, пр. Победы 85 </h5>
+    <h5> <i> +38-096-026-24-08 danil.norets@gmail.com</i> </h5>
+    <h5> {% now "jS F Y H:i" %} </h5>
+    {% endblock %}
+</footer>
+</html>

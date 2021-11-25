@@ -1,0 +1,287 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang = ru>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="{% static 'pages/ava.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/Search.css' %}">
+    <title> {{ title }} </title>
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&display=swap');
+        #fon{
+        width: 100%;
+        }
+        .c {
+        text-align: center;
+        }
+     table {
+        width: 80%;
+        align-content: center;
+        margin: auto;
+        border-collapse: collapse;
+        border: none;
+        font-size: 13pt;
+        padding: 20px;
+     }
+     td {
+        padding: 200px;
+        padding-right: 20px;
+     }
+     th,td,tr {
+
+        border: none;
+        text-align: center
+     }
+          h1{
+        text-align: center;
+        }
+        header {
+        padding-top: 50px;
+        text-align: center;
+    }
+     #navbar a {
+         font-family: "Montserrat", sans-serif;
+         font-weight: 500;
+         font-size: 14px;
+         color: seashell;
+         text-decoration: none;
+    }
+        #navbar ul{
+        display: none;
+        background-color: #23252a;
+        position: absolute;
+        top: 100%;
+    }
+    #navbar li:hover ul { display: block; }
+
+    #navbar, #navbar ul{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    #navbar {
+         width: 95%;
+        height: 50px;
+        background-color: #23252a;
+        left: 70px;
+        position: fixed;
+    }
+    #navbar li {
+        float: left;
+        position: relative;
+        height: 100%;
+        width: 25%;
+        text-align: center;
+    }
+     #navbar li a {
+        display: block;
+        padding: 6px;
+        width: 150px;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+    }
+     #navbar .list {
+           display: inline-block;
+           width: 100%;
+     }
+     #navbar ul li { float: none; }
+  #navbar li:hover { background-color: #666; }
+     #navbar ul li:hover { background-color: #666;
+     width: 100%}
+      #navbar li[id="current"]{
+            pointer-events: none;
+            cursor: default;
+      }
+      #navbar li[id="current"] a{
+      color: #888;}
+      #logo {
+        position: fixed;
+        z-index: 10;
+        width: 70px;
+        height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <a href="../main" target="_blank"> <img id="logo" src="{% static 'pages/logo.png' %}"  title="Возврат на главную страницу"> </a>
+     <ul id="navbar">
+            <li ><a class="list" href="{% url 'pages:main' %}">На главную</a></li>
+            <li><a class="list" href="{% url 'pages:shedule' %}">Приемные дни медперсонала</a></li>
+            <li><a class="list" href="{% url 'pages:info' %}">Пациентам</a></li>
+            <li ><a class="list" href="{% url 'pages:appointment' %}">Запись на прием</a></li>
+     </ul>
+     <header>
+        <h1> {{ title }} </h1>
+        <img id="fon" src="{% static 'pages/image.png' %}" alt="">
+        <p class="c"> По необходимости измените информацию соответствующей записи </p> </br>
+     </header>
+
+<!--<table>
+    <tr>
+        <th> ФИО </th>
+        <th> Кабинет </th>
+         <th> ПН </th>
+         <th> ВТ </th>
+         <th> СР </th>
+         <th> ЧТ </th>
+         <th> ПТ </th>
+         <th> СБ </th>
+    </tr>
+    <tr>
+        <th> Бандур Ирина Вячеславовна </th>
+        <th> 58 </th>
+         <td> 11:00-18:00 </td>
+         <td> 10:00-13:00 </td>
+         <td> 11:00-18:00 </td>
+         <td> 13:00-18:00 </td>
+         <td> - </td>
+         <td> - </td>
+    </tr>
+   <tr>
+        <th> Добровольская Лариса Анатольевна </th>
+        <th> 39 </th>
+         <td> 12:30-14:00 </td>
+         <td> 14:00-16:00 </td>
+         <td> 8:00-11:00 </td>
+         <td> 13:00-15:00 </td>
+         <td> - </td>
+         <td> 12:00-14:00 </td>
+    </tr>
+       <tr>
+        <th> Добровольская Лариса Анатольевна </th>
+        <th> 27 </th>
+         <td> 14:00-18:00 </td>
+         <td> 10:00-14:00 </td>
+         <td> 11:00-15:00 </td>
+         <td> 8:00-13:00 </td>
+         <td> - </td>
+         <td> 14:00-16:00 </td>
+    </tr>
+       <tr>
+        <th> Жигалева Елена Анатольевна </th>
+        <th> 43 </th>
+         <td> 8:00-14:00 </td>
+         <td> 10:00-16:00 </td>
+         <td> 12:00-18:00 </td>
+         <td> 12:00-18:00 </td>
+         <td> 8:00-14:00 </td>
+         <td> - </td>
+    </tr>
+       <tr>
+        <th> Кокоша Виктория Александровна </th>
+        <th> 41 </th>
+         <td> 9:00-16:00 </td>
+         <td> 8:00-11:00 </td>
+         <td> 8:00-14:00 </td>
+         <td> 8:00-14:00 </td>
+         <td> - </td>
+         <td> - </td>
+    </tr>
+    <tr>
+        <th> Заночкина Виктория Александровна </th>
+        <th> 56 </th>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> - </td>
+    </tr>
+    <tr>
+        <th> Лазарева Людмила Ивановна </th>
+        <th> 42 </th>
+        <td> 12:00-18:00 </td>
+        <td> 8:00-14:00 </td>
+        <td> 8:00-14:00 </td>
+        <td> 8:00-14:00 </td>
+        <td> 8:00-14:00 </td>
+        <td> - </td>
+    </tr>
+    <tr>
+        <th> Ларичев Валерий Борисович </th>
+        <th> 80 </th>
+        <td> - </td>
+        <td> 16:00-18:00 </td>
+        <td> 16:00-18:00 </td>
+        <td> - </td>
+        <td> 16:00-18:00 </td>
+        <td> 8:00-14:00 </td>
+    </tr>
+    <tr>
+        <th> Сошко Ольга Васильевна </th>
+        <th> 80 </th>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> - </td>
+    </tr>
+    <tr>
+        <th> Манукян Лиана Самвеливна </th>
+        <th> 29 </th>
+        <td> 11:00-17:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> 9:00-15:00 </td>
+        <td> - </td>
+    </tr>
+    <tr>
+        <th> Чуб Елена Вениаминовна </th>
+        <th> 80 </th>
+        <td> 11:00-15:00 </td>
+        <td> 12:00-16:00 </td>
+        <td> 11:00-15:00 </td>
+        <td> 13:00-17:00 </td>
+        <td> - </td>
+        <td> - </td>
+    </tr>
+</table>
+<br><br>-->
+    <div class="container">
+        <form class="form" id = "form" method="POST">
+            {% csrf_token %}
+            <div class="form-control">
+                <label>Клиент<label class="red">*</label></label>
+                {{ appointment_form.client }}
+            </div>
+
+            <div class="form-control">
+                <label>День приема, лечащий врач<label class="red">*</label></label>
+                {{ appointment_form.reception_day }}
+                <!--<input required type="text" placeholder="Впишите фамилию" id = "last_name" name="surname"/>-->
+            </div>
+
+            <div class="form-control">
+                <label>Время записи<label class="red">*</label></label>
+                {{ appointment_form.appointment_time }}
+                <!--<input required type="text" placeholder="Впишите фамилию" id = "last_name" name="surname"/>-->
+            </div>
+
+            <div class="form-control">
+                <label>Дата последнего изменения<label class="red">*</label></label>
+                {{ appointment_form.date_last_change }}
+                <!--<input required type="text" placeholder="Впишите фамилию" id = "last_name" name="surname"/>-->
+            </div>
+
+            <div class="form-control">
+                <label>Статус<label class="red">*</label></label>
+                {{ appointment_form.status }}
+                <!--<input required type="text" placeholder="Впишите фамилию" id = "last_name" name="surname"/>-->
+            </div>
+
+            <div class="form-control">
+                <span>{{ error }}</span>
+            </div>
+
+            <button type="submit" class = "submitbutton" id = "submitbutton"> Обновить запись </button>
+        </form>
+
+    </div>
+
+
+
+</body>
+</html>

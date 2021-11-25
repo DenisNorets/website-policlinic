@@ -1,0 +1,133 @@
+header {
+   padding-top: 50px;
+}
+#navbar a, #navbar p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: seashell;
+    text-decoration: none;
+    text-align: center;
+}
+#navbar ul{
+   display: none;
+   background-color: #23252a;
+   position: absolute;
+   top: 100%;
+}
+#navbar li:hover ul { display: block; }
+
+#navbar, #navbar ul{
+   margin: 0;
+   padding: 0;
+   list-style-type: none;
+}
+#navbar {
+   width: 95%;
+   height: 50px;
+   background-color: #23252a;
+   left: 70px;
+   position: fixed;
+}
+#navbar li {
+   float: left;
+   position: relative;
+   height: 100%;
+   width: 25%;
+   text-align: center;
+}
+#navbar li a {
+   display: block;
+   padding: 6px;
+   width: 277px;
+   color: #fff;
+}
+#navbar .list {
+      display: inline-block;
+      width: 100%;
+}
+#navbar ul li { float: none; }
+#navbar li:hover { background-color: #666; }
+#navbar ul li:hover { background-color: #666;
+width: 100%}
+a[id="current"]{
+   pointer-events: none;
+   cursor: default;
+   color: #888;
+}
+#logo {
+   position: fixed;
+   z-index: 10;
+   width: 70px;
+   height: 70px;
+}
+h1 {
+  text-align: center;
+}
+
+#photo,#fon {
+  width: 100%;
+}
+
+footer {
+  text-align: center;
+}
+
+.overlay {
+   position: absolute;
+   width: 100%;
+   height: 100vh;
+   top: 0;
+   left: 0;
+   display: none;
+}
+
+.popup {
+    position: absolute;
+    text-align:  center;
+    width: 50%;
+    left: 50%;
+    top: 6%;
+    transform: translate(-50%, 50%);
+    padding: 5px 10px 10px 10px;
+    box-sizing: border-box;
+    color: green;
+}
+
+.close-popup {
+    align-self: flex-end;
+    float: right;
+    color: black;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-popup:hover {
+   color: white;
+}
+
+.btn-restart{
+    background-color: white;
+    border: 2px solid #33ffba;
+    border-radius: 10px;
+    color: black;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 6px;
+    margin-top: 10px;
+    width: 40%;
+    /* margin-bottom: 10px; */
+}
+
+.restart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-label {
+    align-self: flex-start;
+}

@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+     <link rel="icon" href="{% static 'pages/ava.png' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'pages/Appointment_css.css' %}">
+<meta charset="utf-8">
+<title>{{ title }}</title>
+
+</head>
+
+<body>
+    <main>
+        <div class="container">
+
+            <div class ="header">
+                <h2>Запись на прием</h2>
+            </div>
+
+
+            <form class="form" id = "form" method="POST">
+                {% csrf_token %}
+                <div class="form-control">
+                    <label>Имя<label class="red">*</label></label>
+                    {{ client_form.name }}
+                </div>
+
+                <div class="form-control">
+                    <label>Фамилия<label class="red">*</label></label>
+                    {{ client_form.surname }}
+                    <!--<input required type="text" placeholder="Впишите фамилию" id = "last_name" name="surname"/>-->
+                </div>
+
+                <div class="form-control">
+                    <label>Почта<label class="red">*</label></label>
+                    {{ client_form.email }}
+                </div>
+
+                <div class="form-control">
+                    <label>Номер телефона<label class="red">*</label></label>
+                    {{ client_form.telephone }}
+                    <!--<input required type="datetime-local" id = "date" name="date"/>-->
+                </div>
+
+                <div class="form-control">
+                    <label>Дата приема, врач<label class="red">*</label></label>
+                    {{ app_form.reception_day }}
+                    <!--<select required id="doctors" name = "doctor_name">
+                        <option value="">-- Не выбрано --</option>
+                        {% if doctors %}
+                            {% for doctor in doctors %}
+                                <option> {{ doctor.full_name }}</option>
+                                #value = {{ doctor.id }}
+                            {% endfor %}
+                        {% endif %}
+                    </select>-->
+                </div>
+
+                <div class="form-control">
+                    <label>Время записи<label class="red">*</label></label>
+                    {{ app_form.appointment_time }}
+                    <!--<input required type="datetime-local" id = "date" name="date"/>-->
+                </div>
+
+                <div class="form-control">
+                    <span>{{ error }}</span>
+                </div>
+
+                <button type="submit" class = "submitbutton" id = "submitbutton"> Записаться </button>
+
+            </form>
+            <div id = "buttons" >
+                <button class = "redirectbutton" id="redirectbutton" onclick=" window.location = '{% url 'pages:main' %}' "> На главную </button>
+            </div>
+        </div>
+    </main>
+
+    <div class="overlay js-overlay">
+        <div class="popup js-popup">
+            <div class="close-popup js-close">&times;</div>
+            Благодарим вас за пользование нашими услугами. Мы свяжемся с вами в течении одного рабочего дня.
+        </div>
+    </div>
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="{% static 'pages/Appointment_js.js' %}"></script>-->
+</body>
+</html>

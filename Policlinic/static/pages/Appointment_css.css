@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+label.red {
+  color: red;
+}
+body {
+    background-color: aquamarine;
+    font-family: 'Montserrat', sans-serif ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+}
+.container {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    max-width: 100%;
+}
+.header {
+    background-color: #F7F7F7;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 20px 85px 10px;
+}
+.header h2 {
+    margin: 0;
+}
+.form {
+    padding: 30px 30px 0px 30px;
+}
+#buttons {
+    padding: 0px 30px 30px 30px;
+}
+.form-control, #buttons {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    position: relative;
+}
+.form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.form-control input, .form-control select {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+}
+.form-control.success input {
+    border-color: #2ecc71;
+}
+.form-control.error input {
+    border-color: #e74c3c;
+}
+.form-control small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.form-control.error small {
+    color: #e74c3c;
+    visibility: visible;
+}
+.form-control.success small {
+    color: #2ecc71;
+    visibility: hidden;
+}
+button {
+    background-color: aquamarine;
+    border: 2px solid aquamarine;
+    border-radius: 10px;
+    color: #fff;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 8px;
+    width: 100%;
+}
+#buttons {
+    display: flex;
+    justify-content: space-between;
+}
+#submitbutton, #redirectbutton {
+    margin-bottom: 10px;
+}
+button:hover, button:focus {
+    border: 2px solid aquamarine;
+    opacity: 0.7;
+}
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.popup {
+    position: absolute;
+    border: 3px solid black;
+    width: 600px;
+    left: 30%;
+    top: 39%;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: #33ffba;
+    color: black;
+}
+.close-popup {
+    float: right;
+    color: black;
+    font-weight: bold;
+    margin-right: -30px;
+    margin: -30px;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.close-popup:hover {
+    color: white;
+}
