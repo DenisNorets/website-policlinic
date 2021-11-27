@@ -5,21 +5,21 @@
 <html lang="ru">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5X0RWL65F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-N5X0RWL65F');
+    </script>
     <meta charset="UTF-8">
     <title> {% block title %} {{ title_msg }} {% endblock %} </title>
     {% block links %}
         <link rel="icon" href="{% static 'pages/ava.png' %}">
         <link rel="stylesheet" type="text/css" href="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/policlinic.css">
     {% endblock %}
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5X0RWL65F"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-N5X0RWL65F');
-    </script>
 </head>
 
 <body>
