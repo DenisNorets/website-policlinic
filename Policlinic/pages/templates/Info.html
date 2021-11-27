@@ -1,10 +1,9 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="{% static 'pages/ava.png' %}">
-    <title> {{ title }} </title>
+    <title> Info </title>
     <style>
      @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&display=swap');
         #fon{
@@ -82,18 +81,18 @@
     </style>
 </head>
 <body>
-<a href="../main" target="_blank"> <img id="logo" src="{% static 'pages/logo.png' %}" title="Возврат на главную страницу"> </a>
+<a href="../main" target="_blank"> <img id="logo" src="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/logo.png" title="Возврат на главную страницу"> </a>
  <ul id="navbar">
-       <li ><a class="list" href="{% url 'pages:main' %}">На главную</a></li>
-        <li><a class="list" href="{% url 'pages:shedule' %}">Приемные дни медперсонала</a></li>
-        <li><a class="list" href="{% url 'pages:appointment' %}">Записаться на прием</a></li>
-        <li ><a class="list" href="{% url 'pages:search' %}">Поиск записей</a></li>
+       <li ><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Policlinic.html">На главную</a></li>
+        <li><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Shedule.html">Приемные дни медперсонала</a></li>
+        <li><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Appointment.html">Записаться на прием</a></li>
+        <li ><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Search.html">Поиск записей</a></li>
  </ul>
 
 <header>
  <h1> Список медицинских услуг </h1>
 </header>
-    <img id="fon" src="{% static 'pages/image.png' %}" alt="">
+    <img id="fon" src="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/image.png" alt="">
     <ol>
         <font size="4">
             <li>  <p>Динамическое наблюдение за состоянием здоровья пациентов с использованием физикальных, лабораторных и инструментальных исследований в соответствии с отраслевыми стандартами в сфере здравоохранения </p></li>
