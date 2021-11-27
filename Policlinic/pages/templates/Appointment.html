@@ -1,11 +1,10 @@
-{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-     <link rel="icon" href="{% static 'pages/ava.png' %}">
-     <link rel="stylesheet" type="text/css" href="{% static 'pages/Appointment_css.css' %}">
+     <link rel="icon" href="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/ava.png">
+     <link rel="stylesheet" type="text/css" href="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/Appointment_css.css">
 <meta charset="utf-8">
-<title>{{ title }}</title>
+<title> Appointment </title>
 
 </head>
 
@@ -19,7 +18,7 @@
 
 
             <form class="form" id = "form" method="POST">
-                {% csrf_token %}
+
                 <div class="form-control">
                     <label>Имя<label class="red">*</label></label>
                     {{ client_form.name }}
