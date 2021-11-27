@@ -21,55 +21,44 @@
 
                 <div class="form-control">
                     <label>Имя<label class="red">*</label></label>
-                    {{ client_form.name }}
+                    <input required type="text" placeholder="Впишите имя" id = "first_name" name="name"/>
                 </div>
 
                 <div class="form-control">
                     <label>Фамилия<label class="red">*</label></label>
-                    {{ client_form.surname }}
-                    <!--<input required type="text" placeholder="Впишите фамилию" id = "last_name" name="surname"/>-->
+                    <input required type="text" placeholder="Впишите фамилию" id = "last_name" name="surname"/>
                 </div>
 
                 <div class="form-control">
                     <label>Почта<label class="red">*</label></label>
-                    {{ client_form.email }}
+                    <input required type="email" placeholder="example@gmail.com" id = "email" name="email"/>
                 </div>
 
                 <div class="form-control">
                     <label>Номер телефона<label class="red">*</label></label>
-                    {{ client_form.telephone }}
-                    <!--<input required type="datetime-local" id = "date" name="date"/>-->
+                    <input required type="datetime-local" id = "date" name="date"/>
                 </div>
 
                 <div class="form-control">
-                    <label>Дата приема, врач<label class="red">*</label></label>
-                    {{ app_form.reception_day }}
-                    <!--<select required id="doctors" name = "doctor_name">
+                    <select required id="doctors" name = "doctor_name">
                         <option value="">-- Не выбрано --</option>
-                        {% if doctors %}
-                            {% for doctor in doctors %}
-                                <option> {{ doctor.full_name }}</option>
-                                #value = {{ doctor.id }}
-                            {% endfor %}
-                        {% endif %}
-                    </select>-->
+                    </select>
                 </div>
 
                 <div class="form-control">
                     <label>Время записи<label class="red">*</label></label>
-                    {{ app_form.appointment_time }}
-                    <!--<input required type="datetime-local" id = "date" name="date"/>-->
+                    <input required type="datetime-local" id = "date" name="date"/>
                 </div>
 
                 <div class="form-control">
-                    <span>{{ error }}</span>
+                    <span></span>
                 </div>
 
                 <button type="submit" class = "submitbutton" id = "submitbutton"> Записаться </button>
 
             </form>
             <div id = "buttons" >
-                <button class = "redirectbutton" id="redirectbutton" onclick=" window.location = '{% url 'pages:main' %}' "> На главную </button>
+                <button class = "redirectbutton" id="redirectbutton" onclick=" window.location = 'https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Policlinic.html' "> На главную </button>
             </div>
         </div>
     </main>
