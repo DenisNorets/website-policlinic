@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="{% static 'pages/Schedule.css' %}">
      <link rel="icon" href="{% static 'pages/ava.png' %}">
-    <title> {{ title }} </title>
+    <title> Schedule </title>
     <style>
      @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&display=swap');
         #fon{
@@ -98,22 +98,22 @@
     </style>
 </head>
 <body>
-    <a href="../main" target="_blank"> <img id="logo" src="{% static 'pages/logo.png' %}"  title="Возврат на главную страницу"> </a>
+    <a href="../main" target="_blank"> <img id="logo" src="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/logo.png"  title="Возврат на главную страницу"> </a>
      <ul id="navbar">
-            <li><a class="list" href="{% url 'pages:main' %}" >На главную</a></li>
-            <li><a class="list" href="{% url 'pages:info' %}">Пациентам</a></li>
-            <li ><a class="list" href="{% url 'pages:appointment' %}">Запись на прием</a></li>
-            <li ><a class="list" href="{% url 'pages:search' %}">Поиск записей</a></li>
+            <li><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Policlinic.html" >На главную</a></li>
+            <li><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Info.html">Пациентам</a></li>
+            <li ><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Appointment.html">Запись на прием</a></li>
+            <li ><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Search.html">Поиск записей</a></li>
      </ul>
 
 
     <header>
-        <h1> {{ title }} </h1>
-        <img id="fon" src="{% static 'pages/image.png' %}" alt="">
+        <h1> Расписание медперсонала </h1>
+        <img id="fon" src="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/image.png" alt="">
         <p class="c"> Данные представлены на состояние 2021 года </p> </br>
     </header>
 
-<!--<table>
+<table>
     <tr>
         <th> ФИО </th>
         <th> Кабинет </th>
@@ -235,44 +235,8 @@
         <td> - </td>
     </tr>
 </table>
-<br><br>-->
+<br><br>
 </body>
-{% if ids %}
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Лечащий врач</th>
-                <th>День приема</th>
-                <th>Время начала приема</th>
-                <th>Время окончания приема</th>
-                <th></th>
-            </tr>
-        </thead>
-        {% for id in ids %}
-                <tr>
-                    <th>{{ id.1 }} {{ id.2 }}</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                {% for doctor in doctors %}
-                    {% if doctor.6 == id.0 %}
-                            <tr>
-                                <th></th>
-                                <th>{{ doctor.2 }}</th>
-                                <th>{{ doctor.3 }}</th>
-                                <th>{{ doctor.4 }}</th>
-                                <th>
-                                    <div class="buttons">
-                                        <button  id = "submitbutton" class = "submitbutton" onclick=" window.location = '{% url 'pages:appointment_by_id' day_id=doctor.5 %}' "> Записаться </button>
-                                    </div>
-                                </th>
-                            </tr>
-                {% endif %}
-            {% endfor %}
-        {% endfor %}
-    </table>
-{% endif %}
+
 
 </html>
