@@ -3,9 +3,9 @@
 <html lang = ru>
 <head>
     <meta charset="utf-8">
-    <link rel="icon" href="{% static 'pages/ava.png' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'pages/Search.css' %}">
-    <title> {{ title }} </title>
+    <link rel="icon" href="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/ava.png">
+    <link rel="stylesheet" type="text/css" href="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/Search.css">
+    <title> Search </title>
     <style>
      @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&display=swap');
         #fon{
@@ -98,20 +98,20 @@
     </style>
 </head>
 <body>
-    <a href="{% url 'pages:main' %}" target="_blank"> <img id="logo" src="{% static 'pages/logo.png' %}"  title="Возврат на главную страницу"> </a>
+    <a href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Policlinic.html" target="_blank"> <img id="logo" src="{% static 'https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/logo.png"  title="Возврат на главную страницу"> </a>
      <ul id="navbar">
-            <li ><a class="list" href="{% url 'pages:main' %}">На главную</a></li>
-            <li><a class="list" href="{% url 'pages:shedule' %}">Приемные дни медперсонала</a></li>
-            <li><a class="list" href="{% url 'pages:info' %}">Пациентам</a></li>
-            <li ><a class="list" href="{% url 'pages:appointment' %}">Запись на прием</a></li>
+            <li ><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Policlinic.hmtl">На главную</a></li>
+            <li><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Shedule.html">Приемные дни медперсонала</a></li>
+            <li><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Info.html">Пациентам</a></li>
+            <li ><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Appointment.html">Запись на прием</a></li>
      </ul>
      <header>
-        <h1> {{ title }} </h1>
-        <img id="fon" src="{% static 'pages/image.png' %}" alt="">
+        <h1> Поиск записей на прием </h1>
+        <img id="fon" src="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/image.png" alt="">
         <p class="c"> Поиск оформленных записей на прием </p> </br>
      </header>
 
-<!--<table>
+<table>
     <tr>
         <th> ФИО </th>
         <th> Кабинет </th>
@@ -233,63 +233,30 @@
         <td> - </td>
     </tr>
 </table>
-<br><br>-->
+<br><br>
     <div class="container">
         <form class="form" id = "form" method="POST">
             {% csrf_token %}
             <div class="form-control">
                 <label>Email<label class="red">*</label></label>
-                {{ search_form.email }}
+                <input required type="email" placeholder="example@gmail.com" id = "email" name="email"/>
             </div>
 
             <div class="form-control">
                 <label>Номер телефона<label class="red">*</label></label>
-                {{ search_form.telephone }}
-                <!--<input required type="text" placeholder="Впишите фамилию" id = "last_name" name="surname"/>-->
+                 <input type="tel" name="telephone" placeholder="+380981234567" pattern="[\+380]{1}[0-9]{9}" maxlength="13" required/>
             </div>
 
             <div class="form-control">
-                <span>{{ error }}</span>
+                <span></span>
             </div>
 
             <button type="submit" class = "submitbutton" id = "submitbutton"> Найти запись </button>
         </form>
-        <p class="c"> {{ confirmation_message }}</p> </br>
+        <p class="c"></p> </br>
     </div>
 
 
 </body>
-
-
-{% if appointments %}
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Фамилия, имя клиента</th>
-                <th>Дата приема</th>
-                <th>Время приема</th>
-                <th>Фамилия, имя доктора</th>
-                <th>Статус записи</th>
-            </tr>
-        </thead>
-        {% for appointment in appointments%}
-        <tbody>
-            <tr>
-                <th>{{ appointment.0}} {{ appointment.1 }}</th>
-                <th>{{ appointment.2 }}</th>
-                <th>{{ appointment.3 }}</th>
-                <th>{{ appointment.4 }} {{ appointment.5 }}</th>
-                <th>{{ appointment.6 }}</th>
-                <th>
-                    <div class="buttons">
-                        <button onclick=" window.location = '{% url 'pages:update' app_id=appointment.7 %}' "> Обновить информацию </button>
-                        <button onclick=" window.location = '{% url 'pages:refuse' app_id=appointment.7 %}' "> Отказаться </button>
-                    </div>
-                </th>
-            </tr>
-        </tbody>
-        {% endfor %}
-    </table>
-{% endif %}
 
 </html>
