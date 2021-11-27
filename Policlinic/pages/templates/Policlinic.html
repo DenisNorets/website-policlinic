@@ -1,6 +1,3 @@
-{% extends 'base.html' %}
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -15,70 +12,61 @@
     </script>
     <meta charset="UTF-8">
     <title> Policlinic </title>
-    {% block links %}
-        <link rel="icon" href="{% static 'pages/ava.png' %}">
-        <link rel="stylesheet" type="text/css" href="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/policlinic.css">
-    {% endblock %}
+    <link rel="icon" href="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/ava.png">
+    <link rel="stylesheet" type="text/css" href="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/policlinic.css">
 </head>
 
 <body>
-    {% block body %}
     <img id="logo" src="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/logo.png"  title="Логотип">
-        <ul id="navbar">
-            <li><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Shedule.html" >Приемные дни медперсонала</a></li>
-            <li><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Info.html">Пациентам</a></li>
-            <li><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Appointment.html" target="_blank">Запись на прием</a></li>
-            <li><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Search.html" target="_blank">Поиск записей</a></li>
-        </ul>
+    <ul id="navbar">
+        <li><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Shedule.html" >Приемные дни медперсонала</a></li>
+        <li><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Info.html">Пациентам</a></li>
+        <li><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Appointment.html" target="_blank">Запись на прием</a></li>
+        <li><a class="list" href="https://denisnorets.github.io/website-policlinic/Policlinic/pages/templates/Search.html" target="_blank">Поиск записей</a></li>
+    </ul>
 
-        <header>
-            {% if name %}
-            <h1> Добро пожаловать, {{name}} </h1>
-            {% endif %}
-            <h1>  Поликлиника Шевченковского района </h1> <br>
-        </header>
-        <div class="popup">
-            <h3> {{ confirmation_message }} </h3>
-        </div>
-        <img id="fon" src="{% static 'pages/image.png' %}" alt="">
-        <br/>
-        <img id="photo" src ="{% static 'pages/image1.jpg' %}" title="Поликлиника" alt="Фото поликлиники">
-        <br>
-        <font size = "4">
-        <p>
-            Поликлиника оказывает, согласно лицензии, лечебно-профилактическую помощь по 18 врачебным специальностям: педиатрия, детская кардиоревматология, детская неврология, детская ортопедия и травматология, детская отоларингология, детская хирургия, гинекология детского и подросткового возраста, детские инфекционные болезни, клиническая лабораторная диагностика, лечебная физкультура, организация и управление здравоохранением, рентгенология, ультразвуковая диагностика, физиотерапия.
-        <br>
-            В поликлинике работает отделение восстановительного лечения, включающий в себя:
-        </p>
-        <ul>
-            <li> Дневной стационар неврологического профиля на 10 коек; </li><br>
-            <li> Физиотерапевтическое отделение; </li> <br>
-            <li> Кабинет лечебной физкультуры; </li> <br>
-            <li> Кабинет спелеотерапии; </li> <br>
-            <li> Кабинет механотерапии;</li> <br>
-            <li> Кабинет массажа; </li> <br>
-            <li> Кабинет по воспитанию здорового ребенка. </li> <br>
-        </ul>
-        <p>
-            В составе поликлиники организован Центр первичной медицинской помощи и консультативно-диагностический центр. В настоящее время под наблюдением поликлиники около 20 000 детей. <br>
+    <header>
+        {% if name %}
+        <h1> Добро пожаловать</h1>
+        {% endif %}
+        <h1>  Поликлиника Шевченковского района </h1> <br>
+    </header>
+    <div class="popup">
+        <h3> {{ confirmation_message }} </h3>
+    </div>
+    <img id="fon" src="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/image.png" alt="">
+    <br/>
+    <img id="photo" src ="https://denisnorets.github.io/website-policlinic/Policlinic/static/pages/image1.jpg" title="Поликлиника" alt="Фото поликлиники">
+    <br>
+    <font size = "4">
+    <p>
+        Поликлиника оказывает, согласно лицензии, лечебно-профилактическую помощь по 18 врачебным специальностям: педиатрия, детская кардиоревматология, детская неврология, детская ортопедия и травматология, детская отоларингология, детская хирургия, гинекология детского и подросткового возраста, детские инфекционные болезни, клиническая лабораторная диагностика, лечебная физкультура, организация и управление здравоохранением, рентгенология, ультразвуковая диагностика, физиотерапия.
+    <br>
+        В поликлинике работает отделение восстановительного лечения, включающий в себя:
+    </p>
+    <ul>
+        <li> Дневной стационар неврологического профиля на 10 коек; </li><br>
+        <li> Физиотерапевтическое отделение; </li> <br>
+        <li> Кабинет лечебной физкультуры; </li> <br>
+        <li> Кабинет спелеотерапии; </li> <br>
+        <li> Кабинет механотерапии;</li> <br>
+        <li> Кабинет массажа; </li> <br>
+        <li> Кабинет по воспитанию здорового ребенка. </li> <br>
+    </ul>
+    <p>
+        В составе поликлиники организован Центр первичной медицинской помощи и консультативно-диагностический центр. В настоящее время под наблюдением поликлиники около 20 000 детей. <br>
 
-            Перечисленные возможности поликлиники способствуют эффективному оказанию медицинской помощи и профилактики заболеваемости детей и подростков.
-        </p>
+        Перечисленные возможности поликлиники способствуют эффективному оказанию медицинской помощи и профилактики заболеваемости детей и подростков.
+    </p>
 
-        <p> Если у вас есть предложения или замечания, оставьте свой отзыв! </p>
-        </font>
-        <textarea name="comment" cols="70" rows="4"> </textarea>
+    <p> Если у вас есть предложения или замечания, оставьте свой отзыв! </p>
+    </font>
+    <textarea name="comment" cols="70" rows="4"> </textarea>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <script src="{% static 'pages/policlinic.js' %}"></script>
-    {% endblock %}
 </body>
 
 <footer>
-    {% block footer %}
     <h5> Харьков, пр. Победы 85 </h5>
     <h5> <i> +38-096-026-24-08 danil.norets@gmail.com</i> </h5>
-    <h5> {% now "jS F Y H:i" %} </h5>
-    {% endblock %}
 </footer>
 </html>
